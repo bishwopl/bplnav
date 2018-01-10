@@ -1,0 +1,30 @@
+{
+    "name": "bishwopl/bplnav",
+    "description": "Navigation generator, role wise layout switcher for bishwopl/bpluser",
+    "type": "library",
+    "license": "MPL2.0",
+    "homepage": "https://github.com/bishwopl/bplnav",
+    "keywords": [
+        "user",
+        "zf3",
+        "user management",
+        "acl",
+        "auth"
+    ],
+    "authors": [
+        {
+            "name": "Bishwo Prasad Lamichhane",
+            "email": "bishwo.prasad@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0.0",
+        "bishwopl/bpluser": "^1.0"
+
+    },
+    "autoload": {
+        "psr-4": {
+            "BplNav\\": "src"
+        }
+    }
+}
