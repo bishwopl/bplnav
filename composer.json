@@ -17,8 +17,8 @@
         }
     ],
     "require": {
-        "php": "^7.0.0",
-        "bishwopl/bpluser": "^0.0.0"
+        "php": "^7",
+        "bishwopl/bpluser": "^0"
 
     },
     "autoload": {
