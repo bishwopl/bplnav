@@ -9,6 +9,7 @@
 namespace BplNav;
 
 use Laminas\Mvc\MvcEvent;
+use Laminas\Mvc\Application;
 
 class Module {
     
@@ -33,7 +34,7 @@ class Module {
             return;
         }
         $e->getApplication()->getEventManager()->getSharedManager()
-                ->attach(\Laminas\Mvc\Application::class, 'dispatch', function($e) {
+                ->attach(Application::class, 'dispatch', function($e) {
                     $sm = $e->getApplication()->getServiceManager();
                     $authService = $sm->get(\CirclicalUser\Service\AccessService::class);
                     $roles = $authService->getRoles();
@@ -49,7 +50,7 @@ class Module {
                     }
                 }, 100);
             $e->getApplication()->getEventManager()->getSharedManager()
-            ->attach(\Laminas\Mvc\Application::class, 'dispatch.error', function($e) {
+            ->attach(Application::class, 'dispatch.error', function($e) {
                 $sm = $e->getApplication()->getServiceManager();
                 $authService = $sm->get(\CirclicalUser\Service\AccessService::class);
                 $roles = $authService->getRoles();
