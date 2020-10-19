@@ -5,7 +5,7 @@
     "homepage": "https://github.com/bishwopl/bplnav",
     "keywords": [
         "user",
-        "zf3",
+        "laminas",
         "user management",
         "acl",
         "auth"
@@ -18,7 +18,7 @@
     ],
     "require": {
         "php": "^7",
-        "bishwopl/bpluser": "^0"
+        "bishwopl/bpluser": "^1"
 
     },
     "autoload": {
