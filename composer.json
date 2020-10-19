@@ -19,7 +19,6 @@
     "require": {
         "php": "^7",
         "bishwopl/bpluser": "^1"
-
     },
     "autoload": {
         "psr-4": {
