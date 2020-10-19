@@ -9,7 +9,7 @@
 return [
     'service_manager' => [
         'factories' => [
-            \Zend\Navigation\Navigation::class => \BplNav\Service\Factory\NavManagerFactory::class,
+            \Laminas\Navigation\Navigation::class => \BplNav\Service\Factory\NavManagerFactory::class,
         ],
     ],
     'role_wise_layouts' => [
