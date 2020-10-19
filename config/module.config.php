@@ -1,15 +1,12 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+use Laminas\Navigation\Navigation;
+use BplNav\Service\Factory\NavManagerFactory;
 
 return [
     'service_manager' => [
         'factories' => [
-            \Laminas\Navigation\Navigation::class => \BplNav\Service\Factory\NavManagerFactory::class,
+            Navigation::class => NavManagerFactory::class,
         ],
     ],
     'role_wise_layouts' => [
