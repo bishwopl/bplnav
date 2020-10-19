@@ -8,7 +8,7 @@
 
 namespace BplNav;
 
-use Zend\Mvc\MvcEvent;
+use Laminas\Mvc\MvcEvent;
 
 class Module {
     
@@ -18,7 +18,7 @@ class Module {
 
     public function getAutoloaderConfig() {
         return [
-            'Zend\Loader\StandardAutoloader' => [
+            \Laminas\Loader\StandardAutoloader::class => [
                 'namespaces' => [
                     __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
                 ],
@@ -33,7 +33,7 @@ class Module {
             return;
         }
         $e->getApplication()->getEventManager()->getSharedManager()
-                ->attach('Zend\Mvc\Application', 'dispatch', function($e) {
+                ->attach(\Laminas\Mvc\Application::class, 'dispatch', function($e) {
                     $sm = $e->getApplication()->getServiceManager();
                     $authService = $sm->get(\CirclicalUser\Service\AccessService::class);
                     $roles = $authService->getRoles();
@@ -49,7 +49,7 @@ class Module {
                     }
                 }, 100);
             $e->getApplication()->getEventManager()->getSharedManager()
-            ->attach('Zend\Mvc\Application', 'dispatch.error', function($e) {
+            ->attach(\Laminas\Mvc\Application::class, 'dispatch.error', function($e) {
                 $sm = $e->getApplication()->getServiceManager();
                 $authService = $sm->get(\CirclicalUser\Service\AccessService::class);
                 $roles = $authService->getRoles();

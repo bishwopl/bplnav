@@ -2,8 +2,8 @@
 
 namespace BplNav\Service\Factory;
 
-use Zend\ServiceManager\Factory\FactoryInterface;
-use Interop\Container\ContainerInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
+use Psr\Container\ContainerInterface;
 
 class NavManagerFactory implements FactoryInterface{
     /**

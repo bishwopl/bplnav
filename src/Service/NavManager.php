@@ -1,11 +1,11 @@
 <?php
 
 namespace BplNav\Service;
-use Zend\Navigation\Service\DefaultNavigationFactory;
+use Laminas\Navigation\Service\DefaultNavigationFactory;
 
 class NavManager extends DefaultNavigationFactory{
 
-    protected function getPages(\Interop\Container\ContainerInterface $container) {
+    protected function getPages(\Psr\Container\ContainerInterface $container) {
         if (null === $this->pages) {
             $configuration = $container->get('config');
 
