@@ -18,7 +18,8 @@
     ],
     "require": {
         "php": "^7",
-        "bishwopl/bpluser": "^v2"
+        "bishwopl/bpluser": "^2",
+        "laminas/laminas-navigation": "^2.9"
     },
     "autoload": {
         "psr-4": {
