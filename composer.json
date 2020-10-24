@@ -18,7 +18,7 @@
     ],
     "require": {
         "php": "^7",
-        "bishwopl/bpluser": "^1"
+        "bishwopl/bpluser": "^v2"
     },
     "autoload": {
         "psr-4": {
