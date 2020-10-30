@@ -33,21 +33,21 @@ class NavManager extends DefaultNavigationFactory{
     }
     
     protected function filterPages($authService, &$pages){
-        foreach($pages as $key=>$page){
+        foreach(array_keys($pages) as $key){
             $allowedSuper = true;
-            if(!isset($page['resource'])){
+            if(!isset($pages[$key]['resource'])){
                 throw new \Exception("You must specify resource name (usually controller name) for menu item");
             }
-            if(!isset($page['action'])){
+            if(!isset($pages[$key]['action'])){
                 throw new \Exception("You must specify action for menu item");
             }
-            if(!$authService->canAccessAction($page['resource'],$page['action'])){
+            if(!$authService->canAccessAction($pages[$key]['resource'],$pages[$key]['action'])){
                 unset($pages[$key]);
                 $allowedSuper = false;
             }
 
-            if(isset($page['pages']) && $allowedSuper){
-                $this->filterPages($authService, $page['pages']);
+            if(isset($pages[$key]['pages']) && $allowedSuper){
+                $this->filterPages($authService, $pages[$key]['pages']);
             }
         }
         return;
